@@ -1,13 +1,13 @@
 #N canvas 0 0 896 1092 12;
 #X obj 18 40 cnv 15 1666 1333 empty empty empty 20 12 0 14 #b8b8b8
 #404040 0;
-#X obj 42 1060 netsend -u -b;
+#X obj 39 880 netsend -u -b;
 #X obj 976 299 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000 0 1;
 #X floatatom 899 382 5 0 0 0 - - - 0;
 #X obj 899 280 loadbang;
-#X obj 90 1141 delay 4444;
-#X obj 90 1160 t b;
+#X obj 87 961 delay 4444;
+#X obj 87 980 t b;
 #X obj 902 323 hsl 64 15 222 10 0 0 empty empty data_clock_ms -2 -8
 0 10 #fcfcc4 #000000 #000000 0 1;
 #X obj 75 295 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 #fcfcfc
@@ -374,18 +374,18 @@
 #X connect 32 0 27 0;
 #X coords 0 -1 1 1 104 94 2 100 100;
 #X restore 36 144 pd Anlz;
-#X obj 91 1113 r ldb;
+#X obj 88 933 r ldb;
 #X obj 899 426 s ldb;
-#X obj 57 588 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#X obj 55 566 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 #fcfcfc
 #000000 #000000 0 1;
-#X obj 56 644 int;
-#X obj 56 694 ctlout 9;
+#X obj 54 622 int;
+#X obj 54 672 ctlout 9;
 #X obj 897 228 s midionoff;
 #X obj 898 178 tgl 45 0 empty empty empty 17 7 0 10 #f8fc00 #000000
 #000000 0 1;
 #X msg 900 259 1;
 #X text 944 191 <-- Switches all outs at once (Midi and osc);
-#X obj 54 669 change;
+#X obj 52 647 change;
 #N canvas 16 25 700 500 Branalisis 0;
 #X floatatom 301 127 5 0 0 0 - - - 0;
 #X obj 498 184 moses 70;
@@ -449,18 +449,18 @@
 #X connect 25 0 18 0;
 #X connect 26 0 21 0;
 #X coords 0 -1 1 1 85 60 2 100 100;
-#X restore 33 510 pd Branalisis;
-#X obj 138 590 unpack f f;
-#X obj 139 625 noteout 1;
-#X obj 56 623 * 10;
-#X obj 197 1050 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#X restore 31 488 pd Branalisis;
+#X obj 136 568 unpack f f;
+#X obj 137 603 noteout 1;
+#X obj 54 601 * 10;
+#X obj 194 870 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X msg 199 1085 disconnect;
+#X msg 196 905 disconnect;
 #X obj 36 331 oscformat ch1;
-#X msg 90 1186 connect 255.255.255.255 9004;
-#X obj 41 835 r ch1;
+#X msg 87 1006 connect 255.255.255.255 9004;
+#X obj 37 752 r ch1;
 #X obj 36 368 s ch1;
-#X msg 33 750 s ch1/pitch;
+#X msg 34 703 s ch1/pitch;
 #N canvas -110 -1018 1920 950 selektr 0;
 #X obj 101 101 cnv 15 84 59 empty empty empty 20 12 0 14 #606060 #404040
 0;
@@ -743,7 +743,7 @@
 #X connect 104 0 89 0;
 #X connect 104 1 90 0;
 #X coords 0 -1 1 1 85 60 2 100 100;
-#X restore 33 429 pd selektr;
+#X restore 31 407 pd selektr;
 #X obj 268 298 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 #fcfcfc
 #000000 #000000 0 1;
 #X obj 265 270 spigot 1, f 9;
@@ -1468,11 +1468,11 @@
 #X restore 432 147 pd Anlz;
 #X obj 432 334 oscformat ch3;
 #X obj 432 371 s ch3;
-#X obj 252 584 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#X obj 250 563 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 #fcfcfc
 #000000 #000000 0 1;
-#X obj 251 640 int;
-#X obj 251 690 ctlout 9;
-#X obj 249 665 change;
+#X obj 249 619 int;
+#X obj 249 669 ctlout 9;
+#X obj 247 644 change;
 #N canvas 16 25 700 500 Branalisis 0;
 #X floatatom 301 127 5 0 0 0 - - - 0;
 #X obj 498 184 moses 70;
@@ -1536,10 +1536,10 @@
 #X connect 25 0 18 0;
 #X connect 26 0 21 0;
 #X coords 0 -1 1 1 85 60 2 100 100;
-#X restore 228 506 pd Branalisis;
-#X obj 333 586 unpack f f;
-#X obj 334 621 noteout 1;
-#X obj 251 619 * 10;
+#X restore 226 485 pd Branalisis;
+#X obj 331 565 unpack f f;
+#X obj 332 600 noteout 1;
+#X obj 249 598 * 10;
 #N canvas -110 -1018 1920 950 selektr 0;
 #X obj 101 101 cnv 15 84 59 empty empty empty 20 12 0 14 #606060 #404040
 0;
@@ -1822,12 +1822,12 @@
 #X connect 104 0 89 0;
 #X connect 104 1 90 0;
 #X coords 0 -1 1 1 85 60 2 100 100;
-#X restore 228 425 pd selektr;
-#X obj 459 578 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#X restore 226 404 pd selektr;
+#X obj 457 562 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 #fcfcfc
 #000000 #000000 0 1;
-#X obj 458 634 int;
-#X obj 458 684 ctlout 9;
-#X obj 456 659 change;
+#X obj 456 618 int;
+#X obj 456 668 ctlout 9;
+#X obj 454 643 change;
 #N canvas 16 25 700 500 Branalisis 0;
 #X floatatom 301 127 5 0 0 0 - - - 0;
 #X obj 498 184 moses 70;
@@ -1891,10 +1891,10 @@
 #X connect 25 0 18 0;
 #X connect 26 0 21 0;
 #X coords 0 -1 1 1 85 60 2 100 100;
-#X restore 435 500 pd Branalisis;
-#X obj 540 580 unpack f f;
-#X obj 541 615 noteout 1;
-#X obj 458 613 * 10;
+#X restore 433 484 pd Branalisis;
+#X obj 538 564 unpack f f;
+#X obj 539 599 noteout 1;
+#X obj 456 597 * 10;
 #N canvas -110 -1018 1920 950 selektr 0;
 #X obj 101 101 cnv 15 84 59 empty empty empty 20 12 0 14 #606060 #404040
 0;
@@ -2177,14 +2177,14 @@
 #X connect 104 0 89 0;
 #X connect 104 1 90 0;
 #X coords 0 -1 1 1 85 60 2 100 100;
-#X restore 435 419 pd selektr;
-#X msg 228 746 s ch2/pitch;
-#X msg 435 740 s ch3/pitch;
-#X obj 61 874 r ch2;
-#X obj 80 914 r ch3;
-#X obj 157 835 r ch1/pitch;
-#X obj 167 870 r ch2/pitch;
-#X obj 175 906 r ch3/pitch;
+#X restore 433 403 pd selektr;
+#X msg 229 700 s ch2/pitch;
+#X msg 436 699 s ch3/pitch;
+#X obj 57 791 r ch2;
+#X obj 76 831 r ch3;
+#X obj 153 752 r ch1/pitch;
+#X obj 163 787 r ch2/pitch;
+#X obj 171 823 r ch3/pitch;
 #X connect 2 0 13 0;
 #X connect 3 0 13 1;
 #X connect 4 0 9 0;
