@@ -1,0 +1,570 @@
+{
+	"formatVersion": {
+		"major": 1,
+		"minor": 1,
+		"patch": 0
+	},
+	"patch": {
+		"connections": [
+			{
+				"from": [
+					3,
+					"output"
+				],
+				"to": [
+					5,
+					"osc"
+				]
+			},
+			{
+				"from": [
+					6,
+					"osc"
+				],
+				"to": [
+					4,
+					"input"
+				]
+			},
+			{
+				"from": [
+					5,
+					"on-read"
+				],
+				"to": [
+					6,
+					"write"
+				]
+			},
+			{
+				"from": [
+					25,
+					"output"
+				],
+				"to": [
+					13,
+					"input"
+				]
+			},
+			{
+				"from": [
+					5,
+					"on-read"
+				],
+				"to": [
+					25,
+					"write"
+				]
+			},
+			{
+				"from": [
+					3,
+					"output"
+				],
+				"to": [
+					26,
+					"osc"
+				]
+			},
+			{
+				"from": [
+					5,
+					"parameter1"
+				],
+				"to": [
+					25,
+					"velocity"
+				]
+			},
+			{
+				"from": [
+					26,
+					"on-read"
+				],
+				"to": [
+					30,
+					"write"
+				]
+			},
+			{
+				"from": [
+					26,
+					"on-read"
+				],
+				"to": [
+					28,
+					"write"
+				]
+			},
+			{
+				"from": [
+					26,
+					"parameter1"
+				],
+				"to": [
+					30,
+					"parameter1"
+				]
+			},
+			{
+				"from": [
+					26,
+					"parameter1"
+				],
+				"to": [
+					28,
+					"velocity"
+				]
+			},
+			{
+				"from": [
+					28,
+					"output"
+				],
+				"to": [
+					13,
+					"input"
+				]
+			},
+			{
+				"from": [
+					30,
+					"osc"
+				],
+				"to": [
+					4,
+					"input"
+				]
+			},
+			{
+				"from": [
+					5,
+					"parameter1"
+				],
+				"to": [
+					6,
+					"parameter1"
+				]
+			}
+		],
+		"inputOrder": [
+			3
+		],
+		"meta": {
+			"author": "Jonas Johansson",
+			"category": "mixer",
+			"description": "",
+			"displayName": "Lumia OSC",
+			"editor": {
+				"branch": "",
+				"name": "Wire",
+				"version": "7.11.3.13855"
+			},
+			"identifier": "f341a675-6450-4eea-a2f7-1fb013fe0566",
+			"licenseName": "",
+			"mail": "jns.johansson@gmail.com",
+			"quality": 32856,
+			"resolution": {
+				"height": 800,
+				"width": 1280
+			},
+			"thumbnail": "",
+			"url": "www.jonasjohansson.se",
+			"vendor": ""
+		},
+		"nextNodeId": 123,
+		"nodes": {
+			"13": {
+				"attributes": {
+					"instances": {
+						"type": "number",
+						"value": 1
+					}
+				},
+				"bounds": {
+					"height": 82,
+					"width": 132,
+					"x": 1735.391357421875,
+					"y": 858.034912109375
+				},
+				"class": {
+					"id": "77697265-5743-430b-b5cd-a1f981ffbebf",
+					"version": 0
+				},
+				"clock": "video",
+				"color": "ffd0c117",
+				"constants": {
+					"input": {
+						"type": "midi",
+						"value": null
+					}
+				},
+				"hidden": [],
+				"name": "MIDI Out"
+			},
+			"25": {
+				"attributes": {
+					"instances": {
+						"type": "number",
+						"value": 1
+					},
+					"normalize": {
+						"type": "bool",
+						"value": true
+					},
+					"zero-is-off": {
+						"type": "bool",
+						"value": true
+					}
+				},
+				"bounds": {
+					"height": 106,
+					"width": 195,
+					"x": 945.87158203125,
+					"y": 314.4183349609375
+				},
+				"class": {
+					"id": "77697265-8283-4072-8EBE-60BAD8CA9B7A",
+					"version": 0
+				},
+				"clock": "video",
+				"color": "ffff6a00",
+				"constants": {
+					"channel": {
+						"type": "integer",
+						"value": 1
+					},
+					"pitch": {
+						"type": "integer",
+						"value": 0
+					},
+					"velocity": {
+						"type": "float",
+						"value": 0.47999998927116394
+					},
+					"write": {
+						"type": "trigger",
+						"value": null
+					}
+				},
+				"hidden": [
+					"channel"
+				],
+				"name": "Write Note On"
+			},
+			"26": {
+				"attributes": {
+					"instances": {
+						"type": "number",
+						"value": 1
+					},
+					"parameter-number": {
+						"type": "number",
+						"value": 1
+					},
+					"parameter-type1": {
+						"type": "type",
+						"value": "float"
+					}
+				},
+				"bounds": {
+					"height": 82,
+					"width": 195,
+					"x": 489.9351806640625,
+					"y": 450.2320556640625
+				},
+				"class": {
+					"id": "77697265-48C4-40C4-A756-81D6711CD472",
+					"version": 0
+				},
+				"clock": "video",
+				"color": "ffff6a00",
+				"constants": {
+					"address": {
+						"type": "string",
+						"value": "\/ch1\/pitch"
+					},
+					"osc": {
+						"type": "osc",
+						"value": null
+					}
+				},
+				"hidden": [],
+				"name": "Read OSC"
+			},
+			"28": {
+				"attributes": {
+					"instances": {
+						"type": "number",
+						"value": 1
+					},
+					"normalize": {
+						"type": "bool",
+						"value": true
+					},
+					"zero-is-off": {
+						"type": "bool",
+						"value": true
+					}
+				},
+				"bounds": {
+					"height": 106,
+					"width": 195,
+					"x": 945.87158203125,
+					"y": 586.4183349609375
+				},
+				"class": {
+					"id": "77697265-8283-4072-8EBE-60BAD8CA9B7A",
+					"version": 0
+				},
+				"clock": "video",
+				"color": "ffff6a00",
+				"constants": {
+					"channel": {
+						"type": "integer",
+						"value": 1
+					},
+					"pitch": {
+						"type": "integer",
+						"value": 1
+					},
+					"velocity": {
+						"type": "float",
+						"value": 0.62851595878601074
+					},
+					"write": {
+						"type": "trigger",
+						"value": null
+					}
+				},
+				"hidden": [
+					"channel"
+				],
+				"name": "Write Note On"
+			},
+			"3": {
+				"attributes": {
+					"instances": {
+						"type": "number",
+						"value": 1
+					}
+				},
+				"bounds": {
+					"height": 82,
+					"width": 130,
+					"x": 305.48681640625,
+					"y": 178.4183349609375
+				},
+				"class": {
+					"id": "77697265-6489-4B7E-A024-A50A1F4C47E4",
+					"version": 0
+				},
+				"clock": "video",
+				"color": "ffff6a00",
+				"constants": {
+					"input": {
+						"type": "osc",
+						"value": null
+					}
+				},
+				"hidden": [
+					"input"
+				],
+				"name": "OSC In Ch1"
+			},
+			"30": {
+				"attributes": {
+					"instances": {
+						"type": "number",
+						"value": 1
+					},
+					"parameter-number": {
+						"type": "number",
+						"value": 1
+					},
+					"parameter-type1": {
+						"type": "type",
+						"value": "float"
+					}
+				},
+				"bounds": {
+					"height": 106,
+					"width": 195,
+					"x": 945.87158203125,
+					"y": 450.4183349609375
+				},
+				"class": {
+					"id": "77697265-8B96-4D66-BF59-C726226F8F9C",
+					"version": 0
+				},
+				"clock": "video",
+				"color": "ffff6a00",
+				"constants": {
+					"address": {
+						"type": "string",
+						"value": "\/composition\/layers\/3\/video\/opacity"
+					},
+					"parameter1": {
+						"type": "float",
+						"value": 0.62851595878601074
+					},
+					"write": {
+						"type": "trigger",
+						"value": null
+					}
+				},
+				"hidden": [],
+				"name": "Write OSC"
+			},
+			"4": {
+				"attributes": {
+					"instances": {
+						"type": "number",
+						"value": 1
+					}
+				},
+				"bounds": {
+					"height": 82,
+					"width": 132,
+					"x": 1734.597412109375,
+					"y": 968.26708984375
+				},
+				"class": {
+					"id": "77697265-5b59-4fd5-b374-c7ca941ce21e",
+					"version": 0
+				},
+				"clock": "video",
+				"color": "ffd0c117",
+				"constants": {
+					"input": {
+						"type": "osc",
+						"value": null
+					}
+				},
+				"hidden": [],
+				"name": "OSC Out"
+			},
+			"5": {
+				"attributes": {
+					"instances": {
+						"type": "number",
+						"value": 1
+					},
+					"parameter-number": {
+						"type": "number",
+						"value": 1
+					},
+					"parameter-type1": {
+						"type": "type",
+						"value": "float"
+					}
+				},
+				"bounds": {
+					"height": 82,
+					"width": 195,
+					"x": 489.9351806640625,
+					"y": 178.4183349609375
+				},
+				"class": {
+					"id": "77697265-48C4-40C4-A756-81D6711CD472",
+					"version": 0
+				},
+				"clock": "video",
+				"color": "ffff6a00",
+				"constants": {
+					"address": {
+						"type": "string",
+						"value": "\/ch1"
+					},
+					"osc": {
+						"type": "osc",
+						"value": null
+					}
+				},
+				"hidden": [],
+				"name": "Read OSC"
+			},
+			"6": {
+				"attributes": {
+					"instances": {
+						"type": "number",
+						"value": 1
+					},
+					"parameter-number": {
+						"type": "number",
+						"value": 1
+					},
+					"parameter-type1": {
+						"type": "type",
+						"value": "float"
+					}
+				},
+				"bounds": {
+					"height": 106,
+					"width": 195,
+					"x": 945.87158203125,
+					"y": -1.9466400146484375
+				},
+				"class": {
+					"id": "77697265-8B96-4D66-BF59-C726226F8F9C",
+					"version": 0
+				},
+				"clock": "video",
+				"color": "ffff6a00",
+				"constants": {
+					"address": {
+						"type": "string",
+						"value": "\/composition\/dashboard\/link1"
+					},
+					"parameter1": {
+						"type": "float",
+						"value": 0.47999998927116394
+					},
+					"write": {
+						"type": "trigger",
+						"value": null
+					}
+				},
+				"hidden": [],
+				"name": "Write OSC"
+			}
+		},
+		"ui": {
+			"camera": {
+				"x": 476.385589599609375,
+				"y": -481.872314453125,
+				"zoom": 0.74307137727737427
+			},
+			"selection": []
+		}
+	},
+	"resources": {},
+	"ui": {
+		"audio": {
+			"routing": {
+				"in": {},
+				"out": []
+			}
+		},
+		"deviceConnections": {
+			"input": {}
+		},
+		"transport": {
+			"bpm": 120,
+			"time-signature": [
+				4,
+				4
+			]
+		},
+		"video": {
+			"routing": {
+				"out": {
+					"Display 1": null,
+					"Display 2": null,
+					"Display 3": null,
+					"Display 4": null
+				}
+			}
+		}
+	}
+}
