@@ -1,0 +1,12 @@
+#N canvas 323 585 450 300 12;
+#X obj 115 70 * 127;
+#X obj 115 109 int;
+#X obj 115 148 ctlout 1 1;
+#X obj 115 23 inlet;
+#X obj 172 23 inlet;
+#X obj 229 25 inlet;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 3 0 0 0;
+#X connect 4 0 2 1;
+#X connect 5 0 2 2;
