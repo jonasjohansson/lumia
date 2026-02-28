@@ -17,7 +17,7 @@
 #X text 92 626 <-- Switches all outs at once (Midi and osc);
 #X msg 266 18 list Gitarr Vibrafon Kontrabas Trumpet Klarinett Sax
 Basklarinett Alla, f 71;
-#X text 14 7 TODO - Add "ctlin" to gain and toggle.;
+#X text 14 7 ctlin: CC77=gain CC78=on/off (MIDI ch9);
 #X obj 7 53 cnv 2 92 320 empty empty empty 20 12 0 14 #f3deb8 #404040
 0;
 #X obj 45 480 netsend -u -b;
@@ -76,6 +76,8 @@ Basklarinett Alla, f 71;
 #X obj 43 37 ctlin 77 9, f 12;
 #X obj 43 64 / 127;
 #X obj 43 91 + 0.5;
+#X text 264 30 *~ 1.13 x2 = ~1.28x gain boost;
+#X text 316 245 moses 22 = min dB threshold;
 #X connect 0 0 16 0;
 #X connect 1 0 22 0;
 #X connect 2 0 8 1;
@@ -404,6 +406,12 @@ Basklarinett Alla, f 71;
 #X coords 0 -1 1 1 76 60 2 100 100;
 #X restore 15 81 pd selektr;
 #X obj 16 315 sendMidi;
+#X obj 200 663 ctlin 78 9;
+#X obj 200 686 > 0;
+#X obj 580 480 tgl 15 0 empty empty netsend_ok 17 7 0 10 #00fc04 #000000 #000000 0 1;
+#X text 247 663 <-- CC78 ch9 = main on/off;
+#X text 600 480 <-- UDP status;
+#X text 45 520 delay 4444 ms = wait before UDP reconnect;
 #X connect 0 0 6 0;
 #X connect 1 0 6 1;
 #X connect 2 0 4 0;
@@ -435,3 +443,6 @@ Basklarinett Alla, f 71;
 #X connect 26 0 25 0;
 #X connect 26 1 27 1;
 #X connect 26 1 21 1;
+#X connect 28 0 29 0;
+#X connect 29 0 10 0;
+#X connect 16 0 30 0;

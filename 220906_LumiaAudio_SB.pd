@@ -29,9 +29,9 @@
 #X floatatom 321 101 5 0 0 0 - - -;
 #X obj 316 263 / 22;
 #X floatatom 361 135 5 0 0 0 - - -;
-#X obj 106 121 hsl 64 15 10 300 0 0 empty empty smooth 0 6 0 10 -262130
+#X obj 106 121 hsl 64 15 10 300 0 1 empty empty smooth 0 6 0 10 -262130
 -1 -1 3900 1;
-#X obj 106 103 hsl 64 15 0.5 1.5 0 0 empty empty gain 0 6 0 10 -262130
+#X obj 106 103 hsl 64 15 0.5 1.5 0 1 empty empty gain 0 6 0 10 -262130
 -1 -1 2300 1;
 #X floatatom 373 194 2 0 0 0 - - -;
 #X obj 264 80 *~ 1.13;
@@ -40,7 +40,7 @@
 #X obj 269 337 int;
 #X obj 269 360 change;
 #X obj 268 384 / 100;
-#X obj 106 139 hsl 64 15 0 128 0 0 empty empty resol 0 6 0 10 -262130
+#X obj 106 139 hsl 64 15 0 128 0 1 empty empty resol 0 6 0 10 -262130
 -1 -1 6300 1;
 #X obj 269 409 clip 0 1;
 #X obj 264 164 pack 0 44;
@@ -65,9 +65,14 @@
 #X msg 360 336 100;
 #X text 391 337 <--resol preset;
 #X text 585 270 =Loadbang;
-#X obj 105 158 hsl 64 15 10 99 0 0 empty empty Thres 0 6 0 10 -262130
+#X obj 105 158 hsl 64 15 10 99 0 1 empty empty Thres 0 6 0 10 -262130
 -1 -1 2124 1;
 #X msg 423 205 40;
+#X obj 43 37 ctlin 77 9, f 12;
+#X obj 43 64 / 127;
+#X obj 43 91 + 0.5;
+#X text 264 30 *~ 1.13 x2 = ~1.28x gain boost;
+#X text 316 245 moses 22 = min dB threshold;
 #X connect 0 0 16 0;
 #X connect 1 0 22 0;
 #X connect 2 0 8 1;
@@ -107,6 +112,9 @@
 #X connect 34 0 10 1;
 #X connect 37 0 7 0;
 #X connect 38 0 37 0;
+#X connect 39 0 40 0;
+#X connect 40 0 41 0;
+#X connect 41 0 6 0;
 #X coords 0 -1 1 1 85 85 2 100 100;
 #X restore 58 162 pd Anlz;
 #X obj 131 533 r ldb;
@@ -402,6 +410,12 @@
 #X connect 104 1 90 0;
 #X coords 0 -1 1 1 85 60 2 100 100;
 #X restore 53 48 pd selektr;
+#X obj 760 620 ctlin 78 9;
+#X obj 760 643 > 0;
+#X obj 200 594 tgl 15 0 empty empty netsend_ok 17 7 0 10 #00fc04 #000000 #000000 0 1;
+#X text 807 620 <-- CC78 ch9 = main on/off;
+#X text 220 594 <-- UDP status;
+#X text 50 510 s an1: analysis out. s pit1: not connected;
 #X connect 1 0 3 0;
 #X connect 2 0 3 0;
 #X connect 4 0 18 0;
@@ -428,3 +442,6 @@
 #X connect 25 0 24 0;
 #X connect 26 0 25 0;
 #X connect 30 0 20 0;
+#X connect 31 0 32 0;
+#X connect 32 0 25 0;
+#X connect 3 0 33 0;
